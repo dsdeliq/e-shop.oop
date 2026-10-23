@@ -1,0 +1,40 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build e-shop",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-I${workspaceFolder}/include",
+                "${workspaceFolder}/src/Clothing.cpp",
+                "${workspaceFolder}/src/Electronics.cpp",
+                "${workspaceFolder}/src/Food.cpp",
+                "${workspaceFolder}/src/Price.cpp",
+                "${workspaceFolder}/src/Product.cpp",
+                "${workspaceFolder}/src/ProductFactory.cpp",
+                "${workspaceFolder}/src/Quantity.cpp",
+                "${workspaceFolder}/src/Warehouse.cpp",
+                "${workspaceFolder}/src/WarehouseIterator.cpp",
+                "${workspaceFolder}/src/Wieght.cpp",
+                "${workspaceFolder}/src/main.cpp",
+    "-o",
+                "${workspaceFolder}/e-shop"
+],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        }
+    ],
+    "version": "2.0.0"
+}
