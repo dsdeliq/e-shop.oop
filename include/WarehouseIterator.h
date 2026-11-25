@@ -13,9 +13,7 @@ public:
     Product& operator*() const;
     WarehouseIterator& operator++();
     bool operator!=(const WarehouseIterator& other) const;
-
-  
-
+    
 private:
     Base current_;
     Base end_;

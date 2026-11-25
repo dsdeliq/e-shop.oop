@@ -1,30 +1,45 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
             "label": "Build e-shop",
-            "command": "/usr/bin/g++",
-            "args": [
-                "-std=c++17",
-                "-Wall",
-                "-Wextra",
-                "-I${workspaceFolder}/include",
-                "${workspaceFolder}/src/Clothing.cpp",
-                "${workspaceFolder}/src/Electronics.cpp",
-                "${workspaceFolder}/src/Food.cpp",
-                "${workspaceFolder}/src/Price.cpp",
-                "${workspaceFolder}/src/Product.cpp",
-                "${workspaceFolder}/src/ProductFactory.cpp",
-                "${workspaceFolder}/src/Quantity.cpp",
-                "${workspaceFolder}/src/Warehouse.cpp",
-                "${workspaceFolder}/src/WarehouseIterator.cpp",
-                "${workspaceFolder}/src/Wieght.cpp",
-                "${workspaceFolder}/src/main.cpp",
-    "-o",
-                "${workspaceFolder}/e-shop"
-],
+            "type": "shell",
+            "command": "/usr/bin/clang++ -std=c++17 -g -I\"${workspaceFolder}/include\" \"${workspaceFolder}\"/src/*.cpp -o \"${workspaceFolder}/e-shop\"",
             "options": {
                 "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Run e-shop",
+            "type": "shell",
+            "command": "\"${workspaceFolder}/e-shop\"",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build e-shop",
+            "problemMatcher": []
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang++ сборка активного файла",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
             },
             "problemMatcher": [
                 "$gcc"
@@ -35,6 +50,5 @@
             },
             "detail": "Задача создана отладчиком."
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

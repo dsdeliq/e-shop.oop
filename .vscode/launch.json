@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Запуск e-shop (Microsoft C++)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/e-shop",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "LANG",
+                    "value": "ru_RU.UTF-8"
+                },
+                {
+                    "name": "LC_CTYPE",
+                    "value": "ru_RU.UTF-8"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "Build e-shop"
+        }
+    ]
+}
